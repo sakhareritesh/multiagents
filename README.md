@@ -27,4 +27,5 @@ GOOGLE_API_KEY=your_gemini_api_key_here
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 
 ## 📊 How It Works
-![image](https://github.com/user-attachments/assets/8bd6fbb3-169a-40a3-8a14-b4a86238dcc2)
+![image](https://github.com/user-attachments/assets/40104e91-5623-46a8-a998-e8957f4fb139)
+

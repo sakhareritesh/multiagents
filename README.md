@@ -29,3 +29,40 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ## 📊 How It Works
 ![image](https://github.com/user-attachments/assets/40104e91-5623-46a8-a998-e8957f4fb139)
 
+## 🔌 API Endpoints
+## |Endpoint| Method| Description
+/api/agents/classifier|POST|Process input with the Classifier Agent
+/api/agents/email|POST|Process email content directly
+/api/agents/json`|POST|Process JSON data directly
+/api/memory`|GET|Retrieve all memory entries
+/api/memory|DELETE|clear all memory entries
+
+## 🧪 Example Usage
+import requests
+email_content = """
+From: john.doe@acmecorp.com
+Subject: Urgent RFQ - Manufacturing Equipment
+Hi there,
+We need a quote for 50 units of industrial pumps for our new facility. 
+This is urgent as we need to finalize our vendor selection by Friday.
+Specifications:
+- Flow rate: 100 GPM
+- Pressure: 150 PSI
+- Material: Stainless steel
+Please send your best pricing and delivery timeline.
+Best regards,
+John Doe
+Procurement Manager
+ACME Corp
+"""
+response = requests.post(
+    "http://localhost:8000/api/agents/classifier",
+    json={"input": email_content, "inputType": "email"}
+)
+result = response.json()
+print(f"Format: {result['classification']['format']}")
+print(f"Intent: {result['classification']['intent']}")
+print(f"Extracted data: {result['extracted_data']}")
+
+![image](https://github.com/user-attachments/assets/9d2e3ab0-a293-41c0-9496-eef47f85c9d2)
+

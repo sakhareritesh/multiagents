@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Agent Processing System</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <div class="logo">
+          
+            <h1>Multi-Agent Processing System</h1>
+            <p>
+              Intelligent document classification and extraction 
+            </p>
+          </div>
+        </div>
+        
+
+      <main class="app-content">
+        <!-- Input Section -->
+        <section class="input-section">
+          <div class="card">
+            <div class="card-header">
+              <h2><span class="icon">📤</span> Input Processing</h2>
+              <p>Submit content for AI classification and extraction</p>
+            </div>
+            <div class="card-content">
+              <div class="tabs">
+                <button class="tab active" data-tab="email">📧 Email</button>
+                <button class="tab" data-tab="json">📄 JSON</button>
+                <button class="tab" data-tab="text">📋 Text</button>
+              </div>
+
+              <div class="tab-content" id="email-content">
+                <button class="sample-btn" id="email-sample">
+                  📧 Load Sample RFQ Email
+                </button>
+              </div>
+              <div class="tab-content hidden" id="json-content">
+                <button class="sample-btn" id="json-sample">
+                  📄 Load Sample Invoice JSON
+                </button>
+              </div>
+              <div class="tab-content hidden" id="text-content">
+                <button class="sample-btn" id="text-sample">
+                  📋 Load Sample Regulation
+                </button>
+              </div>
+
+              <div class="textarea-container">
+                <textarea
+                  id="input-text"
+                  placeholder="Enter content here..."
+                  rows="12"
+                ></textarea>
+              </div>
+
+              <button id="process-btn" class="primary-btn">
+                <span class="btn-icon">🧠</span>
+                <span class="btn-text">Process with AI Agents</span>
+              </button>
+
+              <div id="error-alert" class="alert error hidden">
+                <span class="alert-icon">⚠️</span>
+                <span class="alert-message"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section">
+          <div id="result-card" class="card hidden">
+            <div class="card-header">
+              <div class="header-content">
+                <h2><span class="icon">🎯</span> Processing Results</h2>
+                <span id="agent-badge" class="badge outline"></span>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="result-grid">
+                <div class="result-item blue">
+                  <div class="label">Format</div>
+                  <div id="result-format" class="value">-</div>
+                </div>
+                <div class="result-item green">
+                  <div class="label">Intent</div>
+                  <div id="result-intent" class="value">-</div>
+                </div>
+                <div class="result-item purple">
+                  <div class="label">Confidence</div>
+                  <div id="result-confidence" class="value">-</div>
+                </div>
+              </div>
+
+              <div id="reasoning-section" class="section">
+                <h3><span class="section-icon">🧠</span> AI Reasoning</h3>
+                <div class="section-content">
+                  <p id="result-reasoning"></p>
+                </div>
+              </div>
+
+              <div class="section">
+                <h3><span class="section-icon">📊</span> Extracted Data</h3>
+                <div class="section-content code-container">
+                  <pre id="result-data"></pre>
+                </div>
+              </div>
+
+              <div id="anomalies-section" class="section warning hidden">
+                <h3><span class="section-icon">⚠️</span> Anomalies Detected</h3>
+                <div class="section-content">
+                  <ul id="anomalies-list"></ul>
+                </div>
+              </div>
+
+              <div class="meta">
+                <div class="meta-item">
+                  <span class="meta-label">Memory ID:</span>
+                  <span id="memory-id" class="meta-value">-</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Processed:</span>
+                  <span id="timestamp" class="meta-value">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Memory Section -->
+          <div class="card memory-card">
+            <div class="card-header">
+              <div class="header-content">
+                <h2><span class="icon">💾</span> Shared Memory</h2>
+                <button id="clear-memory" class="secondary-btn">
+                  Clear Memory
+                </button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div id="memory-container">
+                <div id="empty-memory" class="empty-state">
+                  <div class="empty-icon">💾</div>
+                  <p class="empty-title">No entries in memory yet</p>
+                  <p class="empty-subtitle">
+                    Process some content to see the history
+                  </p>
+                </div>
+                <div id="memory-entries" class="memory-list"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+     
+    
+
+    <div id="loading-overlay" class="hidden">
+      <div class="spinner"></div>
+      <p>Processing </p>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>

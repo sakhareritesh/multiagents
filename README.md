@@ -21,12 +21,12 @@ Deployed Link:- https://multiagents1next-szpq.vercel.app/
 - **Memory Store**: In-memory with Python dictionaries
 
 ## 🚀 Installation
-**Install dependencies:**
-pip install -r requirements.txt
-**Set up your Gemini API key:**
-GOOGLE_API_KEY=your_gemini_api_key_here
-**Running the Application**
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+-**Install dependencies:**
+-pip install -r requirements.txt
+-**Set up your Gemini API key:**
+-GOOGLE_API_KEY=your_gemini_api_key_here
+-**Running the Application**
+-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 
 ## 📊 How It Works
 ![image](https://github.com/user-attachments/assets/40104e91-5623-46a8-a998-e8957f4fb139)

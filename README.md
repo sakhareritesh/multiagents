@@ -64,5 +64,6 @@ print(f"Format: {result['classification']['format']}")
 print(f"Intent: {result['classification']['intent']}")
 print(f"Extracted data: {result['extracted_data']}")
 
-![image](https://github.com/user-attachments/assets/9d2e3ab0-a293-41c0-9496-eef47f85c9d2)
+![image](https://github.com/user-attachments/assets/4c221f19-59e8-4e98-b1f8-c16234eb346e)
+
 

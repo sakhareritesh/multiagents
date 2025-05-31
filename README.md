@@ -33,11 +33,18 @@ Deployed Link:- https://multiagents1next-szpq.vercel.app/
 
 ## 🔌 API Endpoints
 ## |Endpoint| Method| Description
--/api/agents/classifier|POST|Process input with the Classifier Agent
--/api/agents/email|POST|Process email content directly
--/api/agents/json`|POST|Process JSON data directly
--/api/memory`|GET|Retrieve all memory entries
--/api/memory|DELETE|clear all memory entries
+**API Endpoints:**  
+`POST /api/agents/classifier`  
+Process input with the Classifier Agent  
+`POST /api/agents/email`  
+Process email content directly  
+`POST /api/agents/json`  
+Process JSON data directly  
+`GET /api/memory`  
+Retrieve all memory entries  
+`DELETE /api/memory`  
+Clear all memory entries
+
 
 ## 🧪 Example Usage
 you can use the sample email,json and text in the web app

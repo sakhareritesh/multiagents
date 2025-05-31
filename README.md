@@ -38,32 +38,27 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 /api/memory|DELETE|clear all memory entries
 
 ## 🧪 Example Usage
-import requests
-email_content = """
-From: john.doe@acmecorp.com
-Subject: Urgent RFQ - Manufacturing Equipment
-Hi there,
-We need a quote for 50 units of industrial pumps for our new facility. 
-This is urgent as we need to finalize our vendor selection by Friday.
-Specifications:
-- Flow rate: 100 GPM
-- Pressure: 150 PSI
-- Material: Stainless steel
-Please send your best pricing and delivery timeline.
-Best regards,
-John Doe
-Procurement Manager
-ACME Corp
-"""
-response = requests.post(
-    "http://localhost:8000/api/agents/classifier",
-    json={"input": email_content, "inputType": "email"}
-)
-result = response.json()
-print(f"Format: {result['classification']['format']}")
-print(f"Intent: {result['classification']['intent']}")
-print(f"Extracted data: {result['extracted_data']}")
-
+you can use the sample email,json and text in the web app
+## Email Parse
 ![image](https://github.com/user-attachments/assets/4c221f19-59e8-4e98-b1f8-c16234eb346e)
+## Json 
+![image](https://github.com/user-attachments/assets/7a3a3e73-e324-44e5-aecd-1feb06b433d6)
+## Text
+![image](https://github.com/user-attachments/assets/3e71e0e5-8818-476b-94c1-eadc761d6e1f)
 
-
+## 🔍 Agent Details
+### Classifier Agent
+- **Purpose**: Determines document type and intent
+- **Input**: Raw text content
+- **Output**: Classification and routing decision
+- **Model**: Gemini 1.5 Flash
+### Email Agent
+- **Purpose**: Extracts structured data from emails
+- **Input**: Email content
+- **Output**: CRM-style record with sender, intent, requirements
+- **Model**: Gemini 1.5 Flash
+### JSON Agent
+- **Purpose**: Standardizes JSON data
+- **Input**: JSON content
+- **Output**: FlowBit schema with standardized fields
+- **Model**: Gemini 1.5 Flash

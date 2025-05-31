@@ -31,9 +31,9 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 
 ## 🔌 API Endpoints
 ## |Endpoint| Method| Description
-/api/agents/classifier|POST|Process input with the Classifier Agent
-/api/agents/email|POST|Process email content directly
-/api/agents/json`|POST|Process JSON data directly
+-/api/agents/classifier|POST|Process input with the Classifier Agent
+-/api/agents/email|POST|Process email content directly
+-/api/agents/json`|POST|Process JSON data directly
 /api/memory`|GET|Retrieve all memory entries
 /api/memory|DELETE|clear all memory entries
 

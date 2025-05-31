@@ -10,6 +10,21 @@ A powerful document processing system that uses Gemini AI to classify, extract, 
 - **⚠️ Anomaly Detection**: Identifies inconsistencies and missing information
 - **🔄 Real-time Processing**: Instant results with streaming UI updates
 - **💯 Free Tier**: Uses Google's Gemini AI (free tier available)
+- 
+## 🛠️ Technology Stack
+- **Backend**: Python 3.9+ with FastAPI
+- **AI**: Google Generative AI (Gemini 1.5 Flash)
+- **Frontend**: HTML, CSS, JavaScript
+- **Data Validation**: Pydantic
+- **Memory Store**: In-memory with Python dictionaries
 
+## 🚀 Installation
+**Install dependencies:**
+pip install -r requirements.txt
+**Set up your Gemini API key:**
+GOOGLE_API_KEY=your_gemini_api_key_here
+**Running the Application**
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 
-
+## 📊 How It Works
+![image](https://github.com/user-attachments/assets/8bd6fbb3-169a-40a3-8a14-b4a86238dcc2)
